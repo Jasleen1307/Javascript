@@ -52,9 +52,9 @@ setInterval(() => {
     let min = date.getMinutes();
     let second = date.getSeconds();
 
-    document.getElementById("digi-clock").textContent = hour + ":" + min + ":" + second;
+    document.getElementById("digi-clock").textContent= hour + ":" + min + ":" + second;
 
-}, 1000)
+}, 1000) 
 
 
 
