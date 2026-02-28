@@ -1,200 +1,198 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
-
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    color: #f1f5f9;
-    padding: 40px 20px;
-    max-width: 950px;
-    margin: auto;
     min-height: 100vh;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
+    padding: 40px 20px;
+    color: #fff;
+    text-align: center;
 }
 
-
-
+/* Headings */
 h1 {
-    text-align: center;
-    font-size: 2.3rem;
-    margin-bottom: 35px;
-    letter-spacing: 1px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 h2 {
-    margin: 30px 0 15px;
-    font-size: 1.4rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 6px;
+    margin: 25px 0 15px;
+    font-weight: 600;
 }
 
-
-
-form,
-.event-card,
-.empty-state,
-#demoContent {
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+/* Form Styling */
+#eventForm {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-
-
-label {
+#eventForm label {
     display: block;
-    margin-bottom: 14px;
+    text-align: left;
     font-weight: 500;
 }
 
-input,
-select,
-textarea {
+#eventForm input,
+#eventForm select,
+#eventForm textarea {
     width: 100%;
-    padding: 9px 12px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background-color: rgba(255, 255, 255, 0.08);
-    color: #ffffff;
-    font-size: 0.95rem;
-    transition: 0.2s ease;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
-}
-
-
-
-button {
-    padding: 9px 16px;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
     border: none;
-    border-radius: 8px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+#eventForm textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.2s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-button:hover {
-    transform: translateY(-2px);
+#eventForm button {
+    width: 100%;
+    background: #ffb703;
+    color: #000;
 }
 
-button:active {
-    transform: translateY(0);
+#eventForm button:hover {
+    transform: scale(1.05);
+    background: #ff9800;
 }
-
-
-form button {
-    background: linear-gradient(135deg, #3b82f6, #2563eb);
-    color: white;
-}
-
 
 #clearAllBtn {
-    background: linear-gradient(135deg, #ef4444, #dc2626);
+    background: #e63946;
     color: white;
-    margin-right: 10px;
+    margin: 10px;
 }
-
 
 #addSampleBtn {
-    background: linear-gradient(135deg, #22c55e, #16a34a);
+    background: #4361ee;
     color: white;
+    margin: 10px;
 }
 
+#clearAllBtn:hover,
+#addSampleBtn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
 
-
+/* Event Container */
 #eventContainer {
-    margin-top: 20px;
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
+/* Event Card */
 .event-card {
-    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 20px;
     position: relative;
     transition: 0.3s ease;
+    color: #000;
 }
 
 .event-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .event-card h3 {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
+    color: #1d3557;
 }
-
-.event-card div {
-    font-size: 0.9rem;
-    opacity: 0.8;
-}
-
-
 
 .event-card span {
     display: inline-block;
-    margin: 10px 0;
-    padding: 5px 10px;
-    font-size: 0.75rem;
+    margin: 8px 0;
+    padding: 5px 12px;
     border-radius: 20px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    background: #06d6a0;
+    font-size: 12px;
+    color: white;
 }
 
+.event-card p {
+    font-size: 14px;
+}
 
-
+/* Delete Button */
 .delete-btn {
     position: absolute;
-    top: 12px;
-    right: 12px;
-    background: #ef4444;
+    top: 10px;
+    right: 10px;
+    background: #ff006e;
     color: white;
     border-radius: 50%;
-    width: 26px;
-    height: 26px;
-    font-size: 0.8rem;
-    text-align: center;
-    line-height: 26px;
-    padding: 0;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
 }
 
 .delete-btn:hover {
-    background: #b91c1c;
+    background: #c1121f;
 }
 
-
-
+/* Empty State */
 .empty-state {
-    text-align: center;
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    color: #cbd5e1;
+    grid-column: 1 / -1;
+    padding: 30px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 15px;
+    font-size: 18px;
 }
 
-
-
+/* Demo Section */
 #demoContent {
-    margin-top: 15px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 1rem;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    font-size: 16px;
 }
 
-
-
+/* Horizontal Line */
 hr {
-    margin: 35px 0;
-    border: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 40px auto;
+    width: 60%;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #eventForm {
+        padding: 15px;
+    }
 }
