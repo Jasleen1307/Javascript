@@ -1,4 +1,4 @@
-/Array Methods
+//Array Methods
 // 4. Push- add new element in the end of the array and gives the output as new length of the array.
 // 5. Pop- delete the element from the end of array and return the element.
 /*let fruits=["apple","banana"]
@@ -29,4 +29,4 @@ function isPalindrome(){
     arr.forEach(val=> reversed.unshift(val));
     return arr.join()===reversed.join();
 }
-console.log(isPalindrome(arr));
+console.log(isPalindrome(arr));  
